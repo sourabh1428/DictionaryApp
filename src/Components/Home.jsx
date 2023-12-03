@@ -32,6 +32,7 @@ async function handleSearch(){
         else{
             setError(false);
             dispatch(add(text));
+            console.log(data);
             setSuccess(true);
         }
         const result=await res.json();

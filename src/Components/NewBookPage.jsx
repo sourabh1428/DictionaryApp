@@ -136,6 +136,12 @@ const NewBookPage = () => {
       {res.meanings.map((meaning, index) => (
         <div key={index}>
           <h1>{meaning.partOfSpeech}</h1>
+            {/* //antonyms
+            //synonyms
+            //definitions[{definition:xyz,}] */}
+            {meaning.antonyms.length>0 && <ul><h4>Antonyms</h4> {meaning.antonyms.map((e)=>(<li>{e}</li>)) }</ul>}
+            {meaning.synonyms.length>0 && <ul> <h4>Synonyms</h4> {meaning.synonyms.map((e)=>(<li>{e}</li>))}</ul> }
+            {meaning.definitions.length>0 &&(<ul style={{listStyle:'dotted'}} ><h4>Definitions</h4>{meaning.definitions.map((e)=>(<li>{e.definition}</li>))}</ul>)}
           <ul className='res-ul' style={{listStyle:'none'}}>
             {meaning.definitions.map((definition, idx) => (
               <li className='res-li' key={idx}>{definition.definition}</li>
